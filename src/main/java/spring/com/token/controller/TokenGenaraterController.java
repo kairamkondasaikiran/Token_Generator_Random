@@ -44,6 +44,8 @@ public class TokenGenaraterController {
 		String header=httpServletRequest.getHeader("Authorization");
 		//System.out.println(header);
 		tokenRequest.setToken(header);
+		
+		
 		return new ResponseEntity<TokenResponse>(tokenService.validateToken(tokenRequest),HttpStatus.OK);
 	}
 
